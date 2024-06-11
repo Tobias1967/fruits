@@ -24,6 +24,7 @@ class FruitScreen extends StatefulWidget {
   const FruitScreen({super.key});
 
   @override
+// ignore: library_private_types_in_public_api
   _FruitScreenState createState() => _FruitScreenState();
 }
 
@@ -40,8 +41,8 @@ class _FruitScreenState extends State<FruitScreen> {
         isLoading = true;
       });
       try {
-        final response = await http
-            .get(Uri.parse('https://www.fruityvice.com/api/fruit/all'));
+        final response =
+            await http.get(Uri.parse('fruityvice.com/api/fruit/all'));
         if (response.statusCode == 200) {
           allFruits = jsonDecode(response.body);
         } else {
